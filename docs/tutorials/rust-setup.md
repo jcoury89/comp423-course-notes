@@ -76,14 +76,19 @@
 
 ```json
 {
-  "name": "Rust Development Environment",
-  "image": "mcr.microsoft.com/devcontainers/rust:latest",
+  "name": "Rust Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/rust:latest",  
   "customizations": {
     "vscode": {
-      "extensions": ["rust-lang.rust-analyzer"]
+      "settings": {
+        "rust-analyzer.cargo.runBuildScripts": true,
+        "rust-analyzer.procMacro.enable": true
+      },
+      "extensions": [
+        "rust-lang.rust-analyzer"
+      ]
     }
-  },
-  "postCreateCommand": "rustc --version"
+  }
 }
 ```
 10. Great! Almost Done! Now just press ```Ctrl Shift P``` and type in ```Dev Containers: Reopen in Container```  
